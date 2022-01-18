@@ -3,93 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>noteS</title>
-        <link href="src/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap");
-
-            body {
-                font-family: "Noto Sans Mono", monospace;
-                cursor: auto;
-            }
-
-            .notes__form {
-                background: #f8f8f8;
-                display: inline-flex;
-                padding: 10px 20px;
-                border-radius: 3px;
-                margin-bottom: 10px;
-            }
-
-            .notes__form label {
-                display: flex;
-                align-items: center;
-                margin-right: 15px;
-            }
-
-            .notes__form input,
-            .notes__form select {
-                margin-left: 5px;
-            }
-
-            table {
-                border-collapse: collapse;
-            }
-
-            th,
-            td {
-                border: 1px solid #020101;
-                padding: 5px 8px;
-            }
-
-            td button {
-                margin: 5px;
-            }
-
-            .btn {
-                background: #8ea7ff;
-                border: none;
-                border-radius: 3px;
-                padding: 10px 40px;
-                color: white;
-                cursor: pointer;
-            }
-
-            .activeBTN {
-                content: "Save";
-                background-color: darkgreen;
-            }
-            .btn__add:hover {
-                background: #acb6db;
-            }
-            .content__input {
-                width: 25vw;
-            }
-            .activeTD {
-                border: 3px solid #8ea7ff;
-            }
-
-            .btn__save {
-                background: #4caf50;
-                margin: 0 5px;
-            }
-			.btn__edit {
-                background: #e1e10f;
-                margin: 0 5px;
-            }.btn__archive {
-                background: grey;
-                margin: 0 5px;
-            }
-
-            .btn[disabled] {
-                opacity: 0.5;
-                cursor: auto;
-            }
-
-            .btn__delete {
-                background: #f44336;
-            }
-        </style>
+        <title>NOTES</title>
+        <link rel="stylesheet" href="styles/style.css">
     </head>
 
     <body>
@@ -99,7 +14,6 @@
                 <input
                     type="text"
                     placeholder="Enter the note name"
-                    value=""
                     required
                     data-name="noteName"
                 />
@@ -118,7 +32,6 @@
                     type="text"
                     class="content__input"
                     placeholder="Enter the note content"
-                    value=""
                     data-name="noteContent"
                 />
             </label>
@@ -147,24 +60,10 @@
                 <th>Archived</th>
             </thead>
             <tbody>
-                <!-- <tr>
-                    <td></td>
-                    <td id="task_active"></td>
-                    <td id="task_archive">0</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td id="random_active"></td>
-                    <td id="random_archive">0</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td id="idea_active"></td>
-                    <td id="idea_archive"></td>
-                </tr> -->
             </tbody>
         </table>
 
-        <script src="script.js"></script>
+        <script type="module" src="/scripts/render/renderTable/getNotes.js"></script>
+        <script type="module" src="/scripts/render/renderTable/postNote.js"></script>
     </body>
 </html>

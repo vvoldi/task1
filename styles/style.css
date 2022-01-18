@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap");
+
+body {
+    font-family: "Noto Sans Mono", monospace;
+    cursor: auto;
+}
+
+.notes__form {
+    background: #f8f8f8;
+    display: inline-flex;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.notes__form label {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.notes__form input,
+.notes__form select {
+    margin-left: 5px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #020101;
+    padding: 5px 8px;
+}
+
+.btn {
+    background: #8ea7ff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 40px;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.btn__add:hover {
+    background: #acb6db;
+}
+
+.content__input {
+    width: 25vw;
+}
+
+.activeTD {
+    border: 3px solid #8ea7ff;
+}
+
+.btn__save {
+    background: #4caf50;
+}
+
+.btn__edit {
+    background: #e1e10f;
+}
+
+.btn__archive {
+    background: grey;
+}
+
+.btn__delete {
+    background: #f44336;
+}
+
+.btn[disabled] {
+    opacity: 0.5;
+    cursor: auto;
+}
