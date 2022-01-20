@@ -2,6 +2,8 @@ import { selectors } from "../selectors/selectors.js";
 import { controller } from "../../controller/controller.js";
 import { renderTable } from "../../render/renderTable/renderTable.js";
 import { API } from "../../API/API.js";
+import {checkArchive} from "./actionsNotes/archiveNote.js";
+import {renderArchiveTable} from "../renderArchiveTable/renderArchiveTable.js";
 
 selectors.notesForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -32,5 +34,6 @@ selectors.notesForm.addEventListener("submit", async (e) => {
         renderTable(obj);
         selectors.notesForm.reset();
         selectors.noteName.value = ``;
+        checkArchive().then( data => renderArchiveTable(data))
     }
 });

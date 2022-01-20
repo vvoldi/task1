@@ -4,7 +4,7 @@ import {editNote} from "../../render/renderTable/actionsNotes/editNote.js";
 import {saveNote} from "../../render/renderTable/actionsNotes/saveNote.js";
 import { selectors } from "../selectors/selectors.js";
 import {renderArchiveTable} from "../../render/renderArchiveTable/renderArchiveTable.js";
-import { archiveNote, archiveObj } from "./actionsNotes/archiveNote.js";
+import { archiveNote, checkArchive} from "./actionsNotes/archiveNote.js";
 
 export const renderTable = async (obj) => {
     let tr = document.createElement(`tr`);
@@ -31,6 +31,7 @@ export const renderTable = async (obj) => {
     archiveBTN.innerHTML = `Archive`;
     archiveBTN.className = 'btn btn__archive';
     archiveBTN.addEventListener(`click`, () => archiveNote(obj));
+    
 
     let deleteBTN = document.createElement(`button`);
     deleteBTN.innerHTML = `Delete`;
@@ -45,7 +46,8 @@ export const renderTable = async (obj) => {
     selectors.notesTable.append(tr);
     
         
-    renderArchiveTable(archiveObj)
+    
     
 
 }
+checkArchive().then( data => renderArchiveTable(data))
