@@ -16,6 +16,7 @@ export const renderTable = async (obj) => {
 
     let actionsTD = document.createElement(`td`);
 
+
     let editBTN = document.createElement(`button`);
     editBTN.innerHTML = `Edit`;
     editBTN.className = 'btn btn__edit';
