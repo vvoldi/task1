@@ -3,6 +3,8 @@ import { selectors } from "../../selectors/selectors.js";
 import { controller } from "../../../controller/controller.js";
 import { renderTable } from "../../renderTable/renderTable.js";
 import { getNotes } from "../../renderTable/getNotes.js";
+import { checkArchive } from "../../renderArchiveTable/archivation.js";
+import { renderArchiveTable } from "../../renderArchiveTable/renderArchiveTable.js";
 
 export const saveNote = async (id, one, cat) => {
     const tr = selectors.notesTable.querySelector(`tr[id="${id}"]`),
@@ -32,9 +34,11 @@ export const saveNote = async (id, one, cat) => {
 
     let notePUT = await controller(`${API}/${id}`, `PUT`, editedNote);
     getNotes(API);
+
+    checkArchive().then((data) => renderArchiveTable(data));
+
     if (one == 0) {
         selectors.notesTable.innerHTML = "";
         renderTable(notePUT);
     }
-    checkArchive().then( data => renderArchiveTable(data))
 };

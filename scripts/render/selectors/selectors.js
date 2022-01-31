@@ -4,5 +4,5 @@ export const selectors = {
     noteContent: notesForm.querySelector(`input[data-name="noteContent"]`),
     noteCategory: notesForm.querySelector(`select[data-name="noteCategory"]`),
     notesTable: document.querySelector(`#notesTable tbody`),
-    ArchiveTable: document.querySelector(`#archiveTable tbody`)
-}
+    ArchiveTable: document.querySelector(`#archiveTable tbody`),
+};

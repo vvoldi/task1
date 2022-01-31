@@ -4,7 +4,10 @@ import { editNote } from "../../render/renderTable/actionsNotes/editNote.js";
 import { saveNote } from "../../render/renderTable/actionsNotes/saveNote.js";
 import { selectors } from "../selectors/selectors.js";
 import { renderArchiveTable } from "../../render/renderArchiveTable/renderArchiveTable.js";
-import { archiveNote, checkArchive } from "../renderArchiveTable/archivation.js";
+import {
+    archiveNote,
+    checkArchive,
+} from "../renderArchiveTable/archivation.js";
 
 export const renderTable = (obj) => {
     if (obj.archive == 0) {
@@ -46,4 +49,4 @@ export const renderTable = (obj) => {
         selectors.notesTable.append(tr);
     }
 };
-checkArchive().then((data) => renderArchiveTable(data))
+checkArchive().then((data) => renderArchiveTable(data));

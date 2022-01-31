@@ -8,14 +8,12 @@ let sumTask = 0,
     sumRandom = 0,
     sumIdea = 0;
 
-
 const checkArchive = async () => {
     let Archive = {
-        Task: [],
-        Random: [],
-        Idea: [],
+            Task: [],
+            Random: [],
+            Idea: [],
         },
-        
         IdeaArr = [],
         RandomArr = [],
         TaskArr = [],
@@ -52,7 +50,7 @@ const checkArchive = async () => {
                 break;
         }
     });
-    
+
     Archive.Task = Archive.Task.length;
     Archive.Idea = Archive.Idea.length;
     Archive.Random = Archive.Random.length;
@@ -60,24 +58,19 @@ const checkArchive = async () => {
     return Archive;
 };
 
-const  sumsRender = (category) => {
-        if(category == 'Task') {
-            return `<td>${sumTask}</td>`
-        }
-        else if(category == 'Idea') {
-            return `<td>${sumIdea}</td>`
-        }
-        else if(category == 'Random') {
-            return `<td>${sumRandom}</td>`
-        }
-
-}
-
+const sumsRender = (category) => {
+    if (category == "Task") {
+        return `<td>${sumTask}</td>`;
+    } else if (category == "Idea") {
+        return `<td>${sumIdea}</td>`;
+    } else if (category == "Random") {
+        return `<td>${sumRandom}</td>`;
+    }
+};
 
 const archiveNote = async (obj) => {
     const deleteTR = selectors.notesTable.querySelector(`tr[id="${obj.id}"]`),
-          categoryTDvalue = deleteTR.querySelector(`#category`).innerText;
-          
+        categoryTDvalue = deleteTR.querySelector(`#category`).innerText;
 
     saveNote(obj.id, 1, categoryTDvalue);
 
