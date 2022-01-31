@@ -2,7 +2,7 @@ import { controller } from "../../../controller/controller.js";
 import { API } from "../../../API/API.js";
 import { selectors } from "../../selectors/selectors.js";
 import { getNotes } from "../getNotes.js";
-import { checkArchive} from "../actionsNotes/archiveNote.js";
+import { checkArchive} from "../../renderArchiveTable/archivation.js";
 import {renderArchiveTable} from "../../renderArchiveTable/renderArchiveTable.js";
 
 export const deleteNote = async (obj) => {

@@ -1,4 +1,4 @@
-export const filteringContentByDate = async (contentValue) => {
+export const filteringContentByDate = (contentValue) => {
     const regexp = /(0[1-9]|[12][\d]|3[01])\W(0[1-9]|1[0-2])\W(2\d{3})/g;
     let contentObjResult = {
         content: "",

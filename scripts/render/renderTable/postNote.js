@@ -2,7 +2,7 @@ import { selectors } from "../selectors/selectors.js";
 import { controller } from "../../controller/controller.js";
 import { renderTable } from "../../render/renderTable/renderTable.js";
 import { API } from "../../API/API.js";
-import {checkArchive} from "./actionsNotes/archiveNote.js";
+import {checkArchive} from "../renderArchiveTable/archivation.js";
 import {renderArchiveTable} from "../renderArchiveTable/renderArchiveTable.js";
 
 selectors.notesForm.addEventListener("submit", async (e) => {
@@ -26,7 +26,7 @@ selectors.notesForm.addEventListener("submit", async (e) => {
             createdAt: getDate(),
             category: selectors.noteCategory.value,
             content: selectors.noteContent.value,
-            archive: false,
+            archive: 0,
         };
 
         let obj = await controller(API, "POST", noteObj);
