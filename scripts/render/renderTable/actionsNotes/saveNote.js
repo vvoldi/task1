@@ -36,4 +36,5 @@ export const saveNote = async (id, one, cat) => {
         selectors.notesTable.innerHTML = "";
         renderTable(notePUT);
     }
+    checkArchive().then( data => renderArchiveTable(data))
 };
